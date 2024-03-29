@@ -1,9 +1,8 @@
 import 'package:fashion_gemstore/utils/carousel_images.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
-import 'package:fashion_gemstore/widgets/carousel_selected_image.dart';
+import 'package:fashion_gemstore/widgets/carousel.dart';
 import 'package:fashion_gemstore/widgets/category_item.dart';
 import 'package:fashion_gemstore/widgets/header_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
@@ -106,56 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 25,
               ),
-              Stack(
-                children: [
-                  Container(
-                    height: 209,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      image: DecorationImage(
-                        image: AssetImage(
-                          carouselImages[_imageIndex],
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 25,
-                    left: 220,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        HeaderText(
-                          text: 'Autumn',
-                          textColor: AppConstants.whiteColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                        ),
-                        HeaderText(
-                          text: 'Collection',
-                          textColor: AppConstants.whiteColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                        ),
-                        HeaderText(
-                          text: '2021',
-                          textColor: AppConstants.whiteColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    top: 182,
-                    left: 150,
-                    child: CarouselSelectedImage(
-                        numberOfDots: carouselImages.length,
-                        imageIndex: _imageIndex),
-                  ),
-                ],
-              )
+              Carousel(imageIndex: _imageIndex),
             ],
           ),
         ),
@@ -163,3 +113,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
