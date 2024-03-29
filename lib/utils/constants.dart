@@ -8,5 +8,6 @@ class AppConstants {
   static Color whiteColor = Colors.white;
   static Color blackColor = Colors.black;
   static Color fadedIconColor = HexColor('#E6E8EC');
+  static Color notificationDotColor = HexColor('#EF466F');
   
 }

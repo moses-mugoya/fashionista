@@ -12,6 +12,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
+  //update the current index on tap
   void updateCurrentIndex(index) {
     setState(() {
       _currentIndex = index;
