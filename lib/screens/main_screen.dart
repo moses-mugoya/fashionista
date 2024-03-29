@@ -1,6 +1,7 @@
 import 'package:fashion_gemstore/utils/bottom_nav_screens.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -46,33 +47,52 @@ class _MainScreenState extends State<MainScreen> {
               onTap: updateCurrentIndex,
               selectedItemColor: AppConstants.blackColor,
               unselectedItemColor: AppConstants.fadedIconColor,
-              items: const [
+              items: [
                 BottomNavigationBarItem(
                   label: "",
-                  icon: Icon(
-                    Icons.home_outlined,
-                    size: 32,
+                  icon: SvgPicture.asset(
+                    'assets/images/home.svg',
+                    colorFilter: _currentIndex ==
+                            0 //change the color of the svg icons based on the current index
+                        ? ColorFilter.mode(
+                            AppConstants.blackColor, BlendMode.srcIn)
+                        : ColorFilter.mode(
+                            AppConstants.fadedIconColor, BlendMode.srcIn),
+                  ),
+                ),
+                BottomNavigationBarItem(
+                    label: "",
+                    icon: SvgPicture.asset(
+                      'assets/images/search.svg',
+                      colorFilter: _currentIndex ==
+                              1 //change the color of the svg icons based on the current index
+                          ? ColorFilter.mode(
+                              AppConstants.blackColor, BlendMode.srcIn)
+                          : ColorFilter.mode(
+                              AppConstants.fadedIconColor, BlendMode.srcIn),
+                    )),
+                BottomNavigationBarItem(
+                  label: "",
+                  icon: SvgPicture.asset(
+                    'assets/images/order.svg',
+                    colorFilter: _currentIndex ==
+                            2 //change the color of the svg icons based on the current index
+                        ? ColorFilter.mode(
+                            AppConstants.blackColor, BlendMode.srcIn)
+                        : ColorFilter.mode(
+                            AppConstants.fadedIconColor, BlendMode.srcIn),
                   ),
                 ),
                 BottomNavigationBarItem(
                   label: "",
-                  icon: Icon(
-                    Icons.search,
-                    size: 32,
-                  ),
-                ),
-                BottomNavigationBarItem(
-                  label: "",
-                  icon: Icon(
-                    Icons.shopping_bag_outlined,
-                    size: 32,
-                  ),
-                ),
-                BottomNavigationBarItem(
-                  label: "",
-                  icon: Icon(
-                    Icons.person_2_outlined,
-                    size: 32,
+                  icon: SvgPicture.asset(
+                    'assets/images/profile.svg',
+                    colorFilter: _currentIndex ==
+                            3 //change the color of the svg icons based on the current index
+                        ? ColorFilter.mode(
+                            AppConstants.blackColor, BlendMode.srcIn)
+                        : ColorFilter.mode(
+                            AppConstants.fadedIconColor, BlendMode.srcIn),
                   ),
                 ),
               ],
