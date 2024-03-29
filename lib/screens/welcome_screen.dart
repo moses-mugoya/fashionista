@@ -1,3 +1,4 @@
+import 'package:fashion_gemstore/screens/main_screen.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
 import 'package:fashion_gemstore/widgets/welcome_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -51,8 +52,11 @@ class Welcome extends StatelessWidget {
             child: SizedBox(
               width: 193,
               child: GestureDetector(
-                onTap: (){
-                  
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainScreen()));
                 },
                 child: Container(
                   height: 53,
