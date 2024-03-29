@@ -12,5 +12,8 @@ class AppConstants {
   static Color categorySelectedColor = HexColor('#3A2C27');
   static Color categoryUnSelectedColor = HexColor('#F3F3F3');
   static Color categoryUnSelectedIconColor = HexColor('#9D9D9D');
+  static Color mediumFontColor = HexColor('#9B9B9B');
+  static Color featuredBackColor = HexColor('#F4F2F0');
+  static Color bannerBackgroundColor = HexColor('#F8F8FA');
   
 }
