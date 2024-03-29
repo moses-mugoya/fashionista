@@ -25,9 +25,9 @@ class CategoryItem extends StatelessWidget {
                 height: 44,
                 width: 44,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(22),
-                    border:
-                        Border.all(width: 1, color: AppConstants.blackColor)),
+                  borderRadius: BorderRadius.circular(22),
+                  border: Border.all(width: 1, color: AppConstants.blackColor),
+                ),
                 child: Center(
                   child: Container(
                     height: 36,
@@ -36,8 +36,9 @@ class CategoryItem extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18),
                         color: AppConstants.blackColor),
                     child: FractionallySizedBox(
-                      heightFactor: 18 / 36, // Calculate the fraction of the desired height
-                      widthFactor: 18 / 36,
+                      heightFactor: 20 /
+                          36, // Calculate the fraction of the desired height
+                      widthFactor: 20 / 36,
                       child: SvgPicture.asset(
                         svgPath,
                         colorFilter: ColorFilter.mode(
@@ -54,8 +55,9 @@ class CategoryItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(18),
                     color: AppConstants.categoryUnSelectedColor),
                 child: FractionallySizedBox(
-                  heightFactor: 18 / 36, // Calculate the fraction of the desired height
-                  widthFactor: 18 / 36,
+                  heightFactor:
+                      20 / 36, // Calculate the fraction of the desired height
+                  widthFactor: 20 / 36,
                   child: SvgPicture.asset(
                     svgPath,
                     height: 5,
