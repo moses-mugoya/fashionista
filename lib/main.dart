@@ -1,4 +1,4 @@
-import 'package:fashion_gemstore/screens/welcome_page.dart';
+import 'package:fashion_gemstore/screens/welcome_screen.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -16,9 +16,11 @@ class MyApp extends StatelessWidget {
         title: AppConstants.appName,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          scaffoldBackgroundColor: AppConstants.whiteColor,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
+
         home: const Welcome());
   }
 }
