@@ -1,5 +1,6 @@
 import 'package:fashion_gemstore/utils/carousel_images.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
+import 'package:fashion_gemstore/widgets/banner_four_item.dart';
 import 'package:fashion_gemstore/widgets/banner_one.dart';
 import 'package:fashion_gemstore/widgets/banner_three.dart';
 import 'package:fashion_gemstore/widgets/banner_two.dart';
@@ -217,6 +218,12 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 25,
               ),
+              const Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 30,
+                ),
+                child: BannerFourItem(),
+              )
             ],
           ),
         ),
