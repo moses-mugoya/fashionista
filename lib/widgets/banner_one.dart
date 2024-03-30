@@ -1,44 +1,24 @@
 import 'package:fashion_gemstore/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class BannerItem extends StatelessWidget {
-  final double containerHeight;
-  final String smallerText;
-  final List<String> biggerTexts;
-  final FontWeight? fontBiggerTexts;
-  final FontWeight? fontSmallerTexts;
-  final double? fontSizeSmallerText;
-  final double? fontSizeBiggerText;
-  final Color colorSmallerText;
-  final Color colorBiggerText;
-  final String bannerImage;
-
-  const BannerItem(
-      {super.key,
-      required this.containerHeight,
-      required this.smallerText,
-      required this.biggerTexts,
-      this.fontBiggerTexts,
-      this.fontSmallerTexts,
-      this.fontSizeSmallerText,
-      this.fontSizeBiggerText,
-      required this.bannerImage,
-      required this.colorSmallerText,
-      required this.colorBiggerText});
+class BannerOne extends StatelessWidget {
+  const BannerOne({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const String smallText = 'NEW COLLECTION';
+    const List<String> biggerTexts = ['HANG OUT', '& PARTY'];
+
     return Container(
-      padding: const EdgeInsets.only(left: 8, right: 8),
-      height: containerHeight,
+      height: 158,
       decoration: BoxDecoration(color: AppConstants.bannerBackgroundColor),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 40, top: 27),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
@@ -51,11 +31,11 @@ class BannerItem extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      smallerText,
+                      smallText,
                       style: TextStyle(
                           fontFamily: 'ProductSans',
-                          color: colorSmallerText,
-                          fontSize: fontSizeSmallerText),
+                          color: AppConstants.bannerTextColor,
+                          fontSize: 12),
                     ),
                   ],
                 ),
@@ -70,8 +50,8 @@ class BannerItem extends StatelessWidget {
                           text,
                           style: TextStyle(
                             fontFamily: "ProductSans",
-                            fontSize: fontSizeBiggerText,
-                            color: colorBiggerText,
+                            fontSize: 20,
+                            color: AppConstants.bannerDarkTextColor,
                           ),
                         ),
                       )
@@ -80,32 +60,35 @@ class BannerItem extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(width: 25,),
+          const SizedBox(
+            width: 25,
+          ),
           Stack(
             children: [
               Container(
                 height: 132,
                 width: 132,
                 decoration: BoxDecoration(
-                    color: AppConstants.bannerInnerHalloColor,
+                    color: AppConstants.bannerOuterHalloColor,
                     borderRadius: BorderRadius.circular(116)),
                 child: Center(
                   child: Container(
                     height: 100,
                     width: 100,
                     decoration: BoxDecoration(
-                        color: AppConstants.bannerOuterHalloColor,
+                        color: AppConstants.bannerInnerHalloColor,
                         borderRadius: BorderRadius.circular(50)),
                   ),
                 ),
               ),
-
               Positioned(
-                bottom: 0,
-                right: -50,
-                child: Image.asset(
-                  bannerImage,
-                  height: 148,
+                child: SizedBox(
+                  height: 158,
+                  width: 119,
+                  child: Image.asset(
+                    'assets/images/banner1.png',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ],
