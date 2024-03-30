@@ -1,5 +1,6 @@
 import 'package:fashion_gemstore/utils/carousel_images.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
+import 'package:fashion_gemstore/widgets/banner_item_two_hallo.dart';
 import 'package:fashion_gemstore/widgets/carousel.dart';
 import 'package:fashion_gemstore/widgets/category_item.dart';
 import 'package:fashion_gemstore/widgets/featured_item.dart';
@@ -159,12 +160,24 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                padding: const EdgeInsets.only(bottom: 20),
-                height: 158,
-                decoration:
-                    BoxDecoration(color: AppConstants.bannerBackgroundColor),
-              )
+              BannerItem(
+                containerHeight: 158,
+                smallerText: 'NEW COLLECTION',
+                biggerTexts: const ['HANG OUT', '& PARTY'],
+                bannerImage: 'assets/images/banner1.png',
+                colorSmallerText: AppConstants.bannerTextColor,
+                colorBiggerText: AppConstants.bannerDarkTextColor,
+                fontSizeBiggerText: 20,
+                fontSizeSmallerText: 12,
+              ),
+             
+              const Padding(
+                padding: EdgeInsets.all(30),
+                child: RowHeader(
+                  biggerText: 'Recommended',
+                  smallerText: 'Show all',
+                ),
+              ),
             ],
           ),
         ),

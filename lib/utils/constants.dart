@@ -15,5 +15,9 @@ class AppConstants {
   static Color mediumFontColor = HexColor('#9B9B9B');
   static Color featuredBackColor = HexColor('#F4F2F0');
   static Color bannerBackgroundColor = HexColor('#F8F8FA');
+  static Color bannerTextColor = HexColor('#777E90');
+  static Color bannerDarkTextColor = HexColor('#353945');
+  static Color bannerOuterHalloColor = HexColor('#E2E2E2');
+  static Color bannerInnerHalloColor = HexColor('#ECECEC');
   
 }
