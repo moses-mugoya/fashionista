@@ -82,7 +82,7 @@ class BannerTwo extends StatelessWidget {
                 top:
                     -45, // Adjust top position to center the image on the black circle
                 left:
-                    -20.5, // Adjust left position to center the image on the black circle
+                    -18.5, // Adjust left position to center the image on the black circle
                 child: Container(
                   height: 190,
                   width: 139,

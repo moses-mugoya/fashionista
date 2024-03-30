@@ -7,8 +7,10 @@ import 'package:fashion_gemstore/widgets/carousel.dart';
 import 'package:fashion_gemstore/widgets/category_item.dart';
 import 'package:fashion_gemstore/widgets/featured_item.dart';
 import 'package:fashion_gemstore/widgets/header_text.dart';
+import 'package:fashion_gemstore/widgets/recommended_item.dart';
 import 'package:fashion_gemstore/widgets/row_header.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -170,7 +172,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   smallerText: 'Show all',
                 ),
               ),
-
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: SizedBox(
+                  height: 66,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: const [
+                      RecommendedItem(imagePath: 'assets/images/recommended1.png', title: 'White Fashion Hoodie', price: 29.00),
+                    ],
+                  
+                  ),
+                ),
+              ),
               const Padding(
                 padding: EdgeInsets.all(30),
                 child: RowHeader(
@@ -192,7 +206,6 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 25,
               ),
-              
             ],
           ),
         ),
