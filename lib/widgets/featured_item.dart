@@ -9,13 +9,14 @@ class FeaturedItem extends StatelessWidget {
   final String title;
   final double price;
   final Alignment alignment;
-  const FeaturedItem({
+  final String displayPrice;
+  FeaturedItem({
     super.key,
     required this.imagePath,
     this.backgroundColor,
     required this.title,
     required this.price, required this.alignment,
-  });
+  }) : displayPrice = price.toStringAsFixed(2);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class FeaturedItem extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
         HeaderText(
-          text: '\$ $price',
+          text: '\$ $displayPrice',
           textColor: AppConstants.blackColor,
           fontSize: 16,
           fontWeight: FontWeight.w700,

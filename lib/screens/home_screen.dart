@@ -133,20 +133,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.only(left: 30),
                   scrollDirection: Axis.horizontal,
                   children: [
-                    const FeaturedItem(
+                    FeaturedItem(
                       imagePath: 'assets/images/featured1.jpeg',
                       title: 'Turtleneck Sweater',
                       price: 39.99,
-                      alignment: Alignment(-0.5, 0),
+                      alignment: const Alignment(-0.5, 0),
                     ),
                     const SizedBox(
                       width: 25,
                     ),
-                    const FeaturedItem(
+                    FeaturedItem(
                       imagePath: 'assets/images/featured2.png',
                       title: 'Long Sleeve Dress',
                       price: 45.00,
-                      alignment: Alignment(0.5, 0),
+                      alignment: const Alignment(0.5, 0),
                     ),
                     const SizedBox(
                       width: 25,
@@ -178,10 +178,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 66,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
-                    children: const [
-                      RecommendedItem(imagePath: 'assets/images/recommended1.png', title: 'White Fashion Hoodie', price: 29.00),
+                    children: [
+                      RecommendedItem(
+                        imagePath: 'assets/images/recommended1.png',
+                        title: 'White Fashion Hoodie',
+                        price: 29.00,
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      RecommendedItem(
+                        imagePath: 'assets/images/recommended2.png',
+                        title: 'Cotton T-shirt',
+                        price: 30.00,
+                      ),
                     ],
-                  
                   ),
                 ),
               ),
