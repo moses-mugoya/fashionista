@@ -1,10 +1,7 @@
 import 'package:fashion_gemstore/utils/constants.dart';
 import 'package:fashion_gemstore/widgets/main_app_bar.dart';
-import 'package:fashion_gemstore/widgets/order_item.dart';
 import 'package:fashion_gemstore/widgets/order_items_list.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});

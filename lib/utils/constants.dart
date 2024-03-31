@@ -30,6 +30,8 @@ class AppConstants {
   static Color tabBackgroundColor = HexColor('#43484B');
   static Color cardBlackColor = HexColor('#141416');
   static Color greenTextColor = HexColor('#009254');
+  static Color darkGreyColor = HexColor('#575757');
+  static Color darkColor = HexColor('#343434');
   
 
 }

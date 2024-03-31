@@ -43,14 +43,17 @@ class ChildAppBar extends StatelessWidget {
         ),
         centerTitle
             ? Expanded(
-                child: Center(
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      fontFamily: 'ProductSans',
-                      fontSize: 16,
-                      color: AppConstants.blackColor,
-                      fontWeight: FontWeight.w500,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 40),
+                  child: Center(
+                    child: Text(
+                      title,
+                      style: TextStyle(
+                        fontFamily: 'ProductSans',
+                        fontSize: 18,
+                        color: AppConstants.blackColor,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ),
@@ -59,7 +62,7 @@ class ChildAppBar extends StatelessWidget {
                 title,
                 style: TextStyle(
                   fontFamily: 'ProductSans',
-                  fontSize: 16,
+                  fontSize: 18,
                   color: AppConstants.blackColor,
                   fontWeight: FontWeight.w500,
                 ),
