@@ -4,7 +4,28 @@ import 'package:fashion_gemstore/widgets/star_rating.dart';
 import 'package:flutter/material.dart';
 
 class DressItem extends StatelessWidget {
-  const DressItem({super.key});
+  final String imagePath;
+  final bool liked;
+  final String name;
+  final double currentPrice;
+  final double? initialPrice;
+  final int rating;
+  final int ratingsNumber;
+
+  final String displayedCurrentPrice;
+  final String displayedInitialPrice;
+  DressItem({
+    super.key,
+    required this.imagePath,
+    required this.liked,
+    required this.name,
+    required this.currentPrice,
+    this.initialPrice,
+    required this.rating,
+    required this.ratingsNumber,
+  })  : displayedCurrentPrice = currentPrice.toStringAsFixed(2),
+        displayedInitialPrice =
+            initialPrice != null ? initialPrice.toStringAsFixed(2) : '';
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +38,8 @@ class DressItem extends StatelessWidget {
               height: 250,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
-                image: const DecorationImage(
-                  image: AssetImage('assets/images/dress1.png'),
+                image: DecorationImage(
+                  image: AssetImage(imagePath),
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -38,7 +59,9 @@ class DressItem extends StatelessWidget {
                     icon: Icon(
                       Icons.favorite_rounded,
                       size: 14.5,
-                      color: AppConstants.likedColor,
+                      color: liked
+                          ? AppConstants.likedColor
+                          : AppConstants.unlikedColor,
                     ),
                     onPressed: () {},
                   ),
@@ -51,7 +74,7 @@ class DressItem extends StatelessWidget {
           height: 10,
         ),
         HeaderText(
-          text: 'Linen Dress',
+          text: name,
           textColor: AppConstants.dressTextColor,
           fontSize: 12,
           fontWeight: FontWeight.w500,
@@ -62,7 +85,7 @@ class DressItem extends StatelessWidget {
         Row(
           children: [
             HeaderText(
-              text: '\$ 52.00',
+              text: '\$ $displayedCurrentPrice',
               textColor: AppConstants.dressTextColor,
               fontSize: 16,
               fontWeight: FontWeight.w700,
@@ -70,14 +93,16 @@ class DressItem extends StatelessWidget {
             const SizedBox(
               width: 5,
             ),
-            const Text(
-              '\$ 90.00',
-              style: TextStyle(
-                  fontFamily: 'ProductSans',
-                  fontSize: 12,
-                  fontWeight: FontWeight.w300,
-                  decoration: TextDecoration.lineThrough),
-            ),
+            initialPrice != null
+                ? Text(
+                    '\$ $displayedInitialPrice',
+                    style: const TextStyle(
+                        fontFamily: 'ProductSans',
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                        decoration: TextDecoration.lineThrough),
+                  )
+                : Container(),
           ],
         ),
         const SizedBox(
@@ -86,7 +111,7 @@ class DressItem extends StatelessWidget {
         Row(
           children: [
             StarRating(
-              rating: 3,
+              rating: rating,
               filledColor: AppConstants.filledStart,
               emptyColor: AppConstants.nonFilledStar,
             ),
@@ -94,13 +119,12 @@ class DressItem extends StatelessWidget {
               width: 5,
             ),
             Text(
-              '(24)',
+              '($ratingsNumber)',
               style: TextStyle(
-                fontFamily: 'ProductSans',
-                fontSize: 10,
-                fontWeight: FontWeight.w200,
-                color: AppConstants.dressTextColor
-              ),
+                  fontFamily: 'ProductSans',
+                  fontSize: 10,
+                  fontWeight: FontWeight.w200,
+                  color: AppConstants.dressTextColor),
             )
           ],
         ),

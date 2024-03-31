@@ -15,7 +15,8 @@ class FeaturedItem extends StatelessWidget {
     required this.imagePath,
     this.backgroundColor,
     required this.title,
-    required this.price, required this.alignment,
+    required this.price,
+    required this.alignment,
   }) : displayPrice = price.toStringAsFixed(2);
 
   @override
