@@ -20,5 +20,11 @@ class AppConstants {
   static Color bannerOuterHalloColor = HexColor('#ECECEC');
   static Color bannerInnerHalloColor = HexColor('#E2E2E2');
   static Color dressTextColor = HexColor('#33302E');
+  static Color likedColor = HexColor('#FF6E6E');
+  static Color unlikedColor = HexColor('#D8D8D8');
+  static Color dressNameColor = HexColor('#1D1F22');
+  static Color initialPriceColor = HexColor('#BEBFC4');
+  static Color filledStart = HexColor('#508A7B');
+  static Color nonFilledStar =Colors.grey;
   
 }

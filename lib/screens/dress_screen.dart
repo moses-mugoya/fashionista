@@ -1,6 +1,7 @@
 import 'package:fashion_gemstore/screens/main_screen.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
 import 'package:fashion_gemstore/widgets/child_app_bar.dart';
+import 'package:fashion_gemstore/widgets/dress_item.dart';
 import 'package:fashion_gemstore/widgets/header_text.dart';
 import 'package:flutter/material.dart';
 
@@ -94,6 +95,18 @@ class _DressScreenState extends State<DressScreen> {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                GridView.count(
+                  childAspectRatio: (141 / 300),
+                  crossAxisCount: 2,
+                  primary: false,
+                  crossAxisSpacing: 12.0,
+                  mainAxisSpacing: 4.0,
+                  shrinkWrap: true,
+                  children: [DressItem(), DressItem()],
                 )
               ],
             ),
