@@ -1,17 +1,15 @@
-import 'package:fashion_gemstore/utils/carousel_images.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
 import 'package:fashion_gemstore/widgets/banner_four.dart';
 import 'package:fashion_gemstore/widgets/banner_one.dart';
 import 'package:fashion_gemstore/widgets/banner_three.dart';
 import 'package:fashion_gemstore/widgets/banner_two.dart';
 import 'package:fashion_gemstore/widgets/carousel.dart';
-import 'package:fashion_gemstore/widgets/category_item.dart';
 import 'package:fashion_gemstore/widgets/featured_item.dart';
+import 'package:fashion_gemstore/widgets/home_tab_item.dart';
 import 'package:fashion_gemstore/widgets/main_app_bar.dart';
 import 'package:fashion_gemstore/widgets/recommended_item.dart';
 import 'package:fashion_gemstore/widgets/row_header.dart';
 import 'package:flutter/material.dart';
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,82 +18,108 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  int _imageIndex = 0;
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
 
-  void _previousImage() {
-    setState(() {
-      _imageIndex = _imageIndex > 0 ? _imageIndex - 1 : 0;
-    });
+  @override
+  void initState() {
+    _tabController = TabController(length: 4, vsync: this, initialIndex: 0);
+    _tabController.addListener(_handleTabChange);
+
+    super.initState();
   }
 
-  void _nextImage() {
-    setState(() {
-      _imageIndex = _imageIndex < carouselImages.length - 1
-          ? _imageIndex + 1
-          : _imageIndex;
-    });
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  void _handleTabChange() {
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
+    int currentIndex = _tabController.index;
+
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Column(
-                  children: [
-                    const MainAppBar(
+              Column(
+                children: [
+                  //A resuable main appbar
+                  const Padding(
+                    padding: EdgeInsets.all(30.0),
+                    child: MainAppBar(
                       title: 'GemStore',
                       fontSize: 25,
                       fontWeight: FontWeight.w700,
                     ),
-                    const SizedBox(
-                      height: 30,
+                  ),
+                  //Categories section
+                  TabBar(
+                    controller: _tabController,
+                    labelColor: AppConstants.categorySelectedColor,
+                    unselectedLabelColor:
+                        AppConstants.categoryUnSelectedIconColor,
+                    indicatorColor: AppConstants.transparentColor,
+                    dividerColor: AppConstants.transparentColor,
+                    labelStyle: const TextStyle(
+                      fontFamily: 'ProductSans',
+                      fontSize: 11,
+                      fontWeight: FontWeight.w300,
                     ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CategoryItem(
-                          isActive: true,
-                          title: 'Women',
-                          svgPath: 'assets/images/female.svg',
-                        ),
-                        CategoryItem(
-                          isActive: false,
-                          title: 'Men',
-                          svgPath: 'assets/images/male.svg',
-                        ),
-                        CategoryItem(
-                          isActive: false,
-                          title: 'Accessories',
-                          svgPath: 'assets/images/accessory.svg',
-                        ),
-                        CategoryItem(
-                          isActive: false,
-                          title: 'Beauty',
-                          svgPath: 'assets/images/beauty.svg',
-                        ),
-                      ],
+                    tabs: [
+                      HomeTabItem(
+                        isActive: currentIndex == 0,
+                        svgPath: 'assets/images/female.svg',
+                        title: 'Women',
+                      ),
+                      HomeTabItem(
+                        isActive: currentIndex == 1,
+                        svgPath: 'assets/images/male.svg',
+                        title: 'Men',
+                      ),
+                      HomeTabItem(
+                        isActive: currentIndex == 2,
+                        svgPath: 'assets/images/accessory.svg',
+                        title: 'Accessories',
+                      ),
+                      HomeTabItem(
+                        isActive: currentIndex == 3,
+                        svgPath: 'assets/images/beauty.svg',
+                        title: 'Beauty',
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  //Carousel section
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 30,
                     ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    Carousel(imageIndex: _imageIndex),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const RowHeader(
+                    child: Carousel(),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                    child: RowHeader(
                       biggerText: 'Featured Products',
                       smallerText: 'Show all',
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+              //Featured section
               SizedBox(
                 height: 227,
                 child: ListView(
@@ -133,6 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
+              //First Banner
               const BannerOne(),
               const Padding(
                 padding: EdgeInsets.all(30),
@@ -141,6 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   smallerText: 'Show all',
                 ),
               ),
+              //Recommended section
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: SizedBox(
@@ -172,6 +198,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   smallerText: 'Show all',
                 ),
               ),
+              //Second banner
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: BannerTwo(),
@@ -179,6 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 25,
               ),
+              //Third Banner
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: BannerThree(),
@@ -186,6 +214,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 25,
               ),
+              //Fourth
               const Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 30,

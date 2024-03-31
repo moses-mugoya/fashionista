@@ -12,6 +12,7 @@ class CarouselSelectedImage extends StatelessWidget {
   final int numberOfDots;
   final int imageIndex;
 
+
   Widget _inactiveImage() {
     return Padding(
       padding: const EdgeInsets.only(left: 3.0, right: 3.0),
@@ -39,7 +40,7 @@ class CarouselSelectedImage extends StatelessWidget {
           height: 8.0,
           width: 8.0,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppConstants.whiteColor,
             borderRadius: BorderRadius.circular(4.0),
           ),
         ),
