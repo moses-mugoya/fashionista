@@ -1,19 +1,17 @@
 import 'package:fashion_gemstore/utils/carousel_images.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
-import 'package:fashion_gemstore/widgets/banner_four_item.dart';
+import 'package:fashion_gemstore/widgets/banner_four.dart';
 import 'package:fashion_gemstore/widgets/banner_one.dart';
 import 'package:fashion_gemstore/widgets/banner_three.dart';
 import 'package:fashion_gemstore/widgets/banner_two.dart';
 import 'package:fashion_gemstore/widgets/carousel.dart';
 import 'package:fashion_gemstore/widgets/category_item.dart';
 import 'package:fashion_gemstore/widgets/featured_item.dart';
-import 'package:fashion_gemstore/widgets/header_text.dart';
+import 'package:fashion_gemstore/widgets/main_app_bar.dart';
 import 'package:fashion_gemstore/widgets/recommended_item.dart';
 import 'package:fashion_gemstore/widgets/row_header.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/svg.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -51,40 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.all(30.0),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/images/menu.svg',
-                          height: 20,
-                          width: 20,
-                        ),
-                        HeaderText(
-                            text: 'GemStore',
-                            textColor: AppConstants.blackColor,
-                            fontSize: 25,
-                            fontWeight: FontWeight.w700),
-                        Stack(
-                          children: [
-                            const Icon(
-                              Icons.notifications_none,
-                              size: 30,
-                            ),
-                            Positioned(
-                              top: 7,
-                              left: 16,
-                              child: Container(
-                                width: 8, // Adjust size as needed
-                                height: 8,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: AppConstants.notificationDotColor,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
+                    const MainAppBar(
+                      title: 'GemStore',
                     ),
                     const SizedBox(
                       height: 30,
