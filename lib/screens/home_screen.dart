@@ -51,6 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     const MainAppBar(
                       title: 'GemStore',
+                      fontSize: 25,
+                      fontWeight: FontWeight.w700,
                     ),
                     const SizedBox(
                       height: 30,

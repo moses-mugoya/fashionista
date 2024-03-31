@@ -5,8 +5,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class MainAppBar extends StatelessWidget {
   final String title;
+  final FontWeight fontWeight;
+  final double fontSize;
   const MainAppBar({
-    super.key, required this.title,
+    super.key, required this.title, required this.fontWeight, required this.fontSize,
   });
 
   @override
@@ -22,8 +24,8 @@ class MainAppBar extends StatelessWidget {
         HeaderText(
           text: title,
           textColor: AppConstants.blackColor,
-          fontSize: 25,
-          fontWeight: FontWeight.w700,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
         ),
         Stack(
           children: [

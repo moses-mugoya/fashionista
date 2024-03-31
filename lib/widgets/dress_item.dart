@@ -51,14 +51,14 @@ class DressItem extends StatelessWidget {
                 height: 28,
                 width: 28,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(14),
                   color: AppConstants.whiteColor,
                 ),
                 child: Center(
                   child: IconButton(
                     icon: Icon(
                       Icons.favorite_rounded,
-                      size: 14.5,
+                      size: 14,
                       color: liked
                           ? AppConstants.likedColor
                           : AppConstants.unlikedColor,

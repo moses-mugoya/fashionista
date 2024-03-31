@@ -26,5 +26,10 @@ class AppConstants {
   static Color initialPriceColor = HexColor('#BEBFC4');
   static Color filledStart = HexColor('#508A7B');
   static Color nonFilledStar =Colors.grey;
+  static Color transparentColor = Colors.transparent;
+  static Color tabBackgroundColor = HexColor('#43484B');
+  static Color cardBlackColor = HexColor('#141416');
+  static Color greenTextColor = HexColor('#009254');
   
+
 }
