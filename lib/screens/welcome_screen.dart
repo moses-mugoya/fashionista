@@ -1,9 +1,7 @@
 import 'package:fashion_gemstore/screens/main_screen.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
 import 'package:fashion_gemstore/widgets/welcome_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});

@@ -10,6 +10,7 @@ import 'package:fashion_gemstore/widgets/main_app_bar.dart';
 import 'package:fashion_gemstore/widgets/recommended_item.dart';
 import 'package:fashion_gemstore/widgets/row_header.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -97,129 +98,157 @@ class _HomeScreenState extends State<HomeScreen>
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  //Carousel section
-                  const Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 30,
-                    ),
-                    child: Carousel(),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                    child: RowHeader(
-                      biggerText: 'Featured Products',
-                      smallerText: 'Show all',
-                    ),
-                  ),
                 ],
               ),
-              //Featured section
               SizedBox(
-                height: 227,
-                child: ListView(
-                  padding: const EdgeInsets.only(left: 30),
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    FeaturedItem(
-                      imagePath: 'assets/images/featured1.jpeg',
-                      title: 'Turtleneck Sweater',
-                      price: 39.99,
-                      alignment: const Alignment(-0.5, 0),
+                height: MediaQuery.of(context).size.height,
+                child: TabBarView(controller: _tabController, children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 300),
+                    child: ListView(
+                      children: [
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        //Carousel section
+                        const Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 30,
+                          ),
+                          child: Carousel(),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 30),
+                          child: RowHeader(
+                            biggerText: 'Featured Products',
+                            smallerText: 'Show all',
+                          ),
+                        ),
+                        //Featured section
+                        SizedBox(
+                          height: 227,
+                          child: ListView(
+                            padding: const EdgeInsets.only(left: 30),
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              FeaturedItem(
+                                imagePath: 'assets/images/featured1.jpeg',
+                                title: 'Turtleneck Sweater',
+                                price: 39.99,
+                                alignment: const Alignment(-0.5, 0),
+                              ),
+                              const SizedBox(
+                                width: 25,
+                              ),
+                              FeaturedItem(
+                                imagePath: 'assets/images/featured2.png',
+                                title: 'Long Sleeve Dress',
+                                price: 45.00,
+                                alignment: const Alignment(0.5, 0),
+                              ),
+                              const SizedBox(
+                                width: 25,
+                              ),
+                              FeaturedItem(
+                                imagePath: 'assets/images/featured3.png',
+                                title: 'Sportwear Set',
+                                price: 80.00,
+                                backgroundColor: AppConstants.featuredBackColor,
+                                alignment: const Alignment(0, 0),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        //First Banner
+                        const BannerOne(),
+                        const Padding(
+                          padding: EdgeInsets.all(30),
+                          child: RowHeader(
+                            biggerText: 'Recommended',
+                            smallerText: 'Show all',
+                          ),
+                        ),
+                        //Recommended section
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 30),
+                          child: SizedBox(
+                            height: 66,
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                RecommendedItem(
+                                  imagePath: 'assets/images/recommended1.png',
+                                  title: 'White Fashion Hoodie',
+                                  price: 29.00,
+                                ),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                RecommendedItem(
+                                  imagePath: 'assets/images/recommended2.png',
+                                  title: 'Cotton T-shirt',
+                                  price: 30.00,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.all(30),
+                          child: RowHeader(
+                            biggerText: 'Top Collection',
+                            smallerText: 'Show all',
+                          ),
+                        ),
+                        //Second banner
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 30),
+                          child: BannerTwo(),
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        //Third Banner
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 30),
+                          child: BannerThree(),
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        //Fourth
+                        const Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 30,
+                          ),
+                          child: BannerFourItem(),
+                        )
+                      ],
                     ),
-                    const SizedBox(
-                      width: 25,
-                    ),
-                    FeaturedItem(
-                      imagePath: 'assets/images/featured2.png',
-                      title: 'Long Sleeve Dress',
-                      price: 45.00,
-                      alignment: const Alignment(0.5, 0),
-                    ),
-                    const SizedBox(
-                      width: 25,
-                    ),
-                    FeaturedItem(
-                      imagePath: 'assets/images/featured3.png',
-                      title: 'Sportwear Set',
-                      price: 80.00,
-                      backgroundColor: AppConstants.featuredBackColor,
-                      alignment: const Alignment(0, 0),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              //First Banner
-              const BannerOne(),
-              const Padding(
-                padding: EdgeInsets.all(30),
-                child: RowHeader(
-                  biggerText: 'Recommended',
-                  smallerText: 'Show all',
-                ),
-              ),
-              //Recommended section
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: SizedBox(
-                  height: 66,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      RecommendedItem(
-                        imagePath: 'assets/images/recommended1.png',
-                        title: 'White Fashion Hoodie',
-                        price: 29.00,
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      RecommendedItem(
-                        imagePath: 'assets/images/recommended2.png',
-                        title: 'Cotton T-shirt',
-                        price: 30.00,
-                      ),
-                    ],
                   ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(30),
-                child: RowHeader(
-                  biggerText: 'Top Collection',
-                  smallerText: 'Show all',
-                ),
-              ),
-              //Second banner
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: BannerTwo(),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              //Third Banner
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: BannerThree(),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              //Fourth
-              const Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 30,
-                ),
-                child: BannerFourItem(),
+                  const Center(
+                    child: Text(
+                      'Men Screen',
+                    ),
+                  ),
+                  const Center(
+                    child: Text(
+                      'Accessories Screen',
+                    ),
+                  ),
+                  const Center(
+                    child: Text(
+                      'Beauty Screen',
+                    ),
+                  ),
+                ]),
               )
             ],
           ),
