@@ -1,4 +1,3 @@
-import 'package:fashion_gemstore/utils/constants.dart';
 import 'package:fashion_gemstore/widgets/header_text.dart';
 import 'package:flutter/material.dart';
 
