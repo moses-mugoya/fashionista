@@ -120,6 +120,7 @@ class OrderItem extends StatelessWidget {
                 ),
                 CustomButton(
                   text: 'Details',
+                  borderColor: AppConstants.darkGreyColor,
                   onPressed: () {
                     Navigator.push(
                       context,

@@ -283,6 +283,7 @@ class OrderDetailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   CustomButton(
+                    borderColor: AppConstants.bannerTextColor,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -295,7 +296,7 @@ class OrderDetailScreen extends StatelessWidget {
                     text: 'Return home',
                     backgroundColor: AppConstants.whiteColor,
                   ),
-                  CustomButton(textColor: AppConstants.whiteColor, text: 'Rate', backgroundColor: AppConstants.darkColor)
+                  CustomButton(textColor: AppConstants.whiteColor, text: 'Rate', backgroundColor: AppConstants.darkColor, borderColor: AppConstants.darkColor,)
                 ],
               ),
             ],

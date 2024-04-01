@@ -104,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen>
                 height: MediaQuery.of(context).size.height,
                 child: TabBarView(controller: _tabController, children: [
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 300),
+                    padding: const EdgeInsets.only(bottom: 310),
                     child: ListView(
                       children: [
                         const SizedBox(
