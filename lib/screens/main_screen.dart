@@ -42,6 +42,7 @@ class _MainScreenState extends State<MainScreen> {
               color: AppConstants.blackColor.withOpacity(0.15),
             ),
             child: BottomNavigationBar(
+              backgroundColor: AppConstants.whiteColor,
               currentIndex: _currentIndex,
               type: BottomNavigationBarType.fixed,
               onTap: updateCurrentIndex,

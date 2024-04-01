@@ -10,7 +10,6 @@ import 'package:fashion_gemstore/widgets/main_app_bar.dart';
 import 'package:fashion_gemstore/widgets/recommended_item.dart';
 import 'package:fashion_gemstore/widgets/row_header.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -104,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen>
                 height: MediaQuery.of(context).size.height,
                 child: TabBarView(controller: _tabController, children: [
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 310),
+                    padding: const EdgeInsets.only(bottom: 317),
                     child: ListView(
                       children: [
                         const SizedBox(
