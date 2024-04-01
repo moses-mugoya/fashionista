@@ -218,7 +218,7 @@ class OrderDetailScreen extends StatelessWidget {
                             fontSize: 14,
                           ),
                           HeaderText(
-                            text: '\$120',
+                            text: '\$120.00',
                             textColor: AppConstants.bannerDarkTextColor,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
