@@ -65,7 +65,7 @@ class Welcome extends StatelessWidget {
                       color: AppConstants.whiteColor, // Specify border color
                       width: 1.18, // Specify border width
                     ),
-                    color: AppConstants.whiteColor.withOpacity(0.25),
+                    color: Colors.grey.shade700,
                   ),
                   child: Center(
                     child: WelcomeCustomText(
