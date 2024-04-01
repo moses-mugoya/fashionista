@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           scaffoldBackgroundColor: AppConstants.whiteColor,
-         
+          fontFamily: 'ProductSans',
           useMaterial3: true,
         ),
 
