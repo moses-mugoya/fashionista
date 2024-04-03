@@ -1,16 +1,33 @@
 # fashion_gemstore
 
-A new Flutter project.
+An e-commerce design
 
-## Getting Started
+## Navigation
 
-This project is a starting point for a Flutter application.
+### Get Started Button
+Tap this button to open the home screen.
 
-A few resources to get you started if this is your first Flutter project:
+### Dresses Banner
+Scroll down to the bottom to find the dresses banner. Tap on it to access the dresses page. You'll see text indicating "152 results".
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Bottom Navigation Bar
+On the bottom of the screen, you'll find a navigation bar. Tap on the third option to view your orders list.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Order Details
+In the orders list, tap on the details button to view more information about a specific order.
+
+### Screens
+<img src="https://github.com/mugonchez/fashionista/assets/25013710/7934826a-108d-4686-a04a-ed9665741622" alt="Image Alt Text" style="width:360px; height:800px;">
+<img src="https://github.com/mugonchez/fashionista/assets/25013710/45a45348-de9e-4649-819f-d652c802e059" alt="Image Alt Text" style="width:360px; height:800px;">
+<img src="https://github.com/mugonchez/fashionista/assets/25013710/cea623f4-39f4-48a1-a253-43ce09df032f" alt="Image Alt Text" style="width:360px; height:800px;">
+<img src="https://github.com/mugonchez/fashionista/assets/25013710/4f2afe25-786c-46d0-a99e-166da2ab06f6" alt="Image Alt Text" style="width:360px; height:800px;">
+<img src="https://github.com/mugonchez/fashionista/assets/25013710/11066483-b24e-4ecf-8b73-9d8ccaa60ea6" alt="Image Alt Text" style="width:360px; height:800px;">
+
+
+
+
+
+
+
+
+
