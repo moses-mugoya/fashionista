@@ -7,11 +7,16 @@ class BannerThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const String smallText = 'Summer Collection 2021';
-    const List<String> biggerTexts = ['Most sexy','& fabulous', 'design'];
+    const List<String> biggerTexts = ['Most sexy', '& fabulous', 'design'];
 
     return Container(
       height: 210,
-      decoration: BoxDecoration(color: AppConstants.bannerBackgroundColor),
+      decoration: BoxDecoration(
+        color: AppConstants.bannerBackgroundColor,
+        borderRadius: BorderRadius.circular(
+          12,
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -64,7 +69,6 @@ class BannerThree extends StatelessWidget {
               ],
             ),
           ),
-          
           Stack(
             children: [
               // Container

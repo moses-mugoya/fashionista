@@ -1,6 +1,5 @@
 import 'package:fashion_gemstore/screens/dress_screen.dart';
 import 'package:fashion_gemstore/utils/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -21,32 +20,10 @@ class BannerFourItem extends StatelessWidget {
               color: AppConstants.bannerBackgroundColor,
             ),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 30),
-                  child: Transform.scale(
-                    scale: 1.7,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Transform.translate(
-                        offset: const Offset(
-                            -38.0, -12.0), // Adjust the offset as needed
-                        child: Container(
-                          width: 70, // Adjust the width as needed
-                          height: 110,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/banner4.png'),
-                              fit: BoxFit.cover,
-                              alignment: Alignment
-                                  .centerLeft, // Center the image horizontally
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset('assets/images/shirt.png'),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 40),
@@ -62,7 +39,7 @@ class BannerFourItem extends StatelessWidget {
                             color: AppConstants.bannerTextColor),
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 15,
                       ),
                       Text(
                         'The ',

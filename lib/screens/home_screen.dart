@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen>
                     padding: EdgeInsets.all(30.0),
                     child: MainAppBar(
                       title: 'GemStore',
-                      fontSize: 25,
+                      fontSize: 21,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -183,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen>
                               scrollDirection: Axis.horizontal,
                               children: [
                                 RecommendedItem(
-                                  imagePath: 'assets/images/recommended1.png',
+                                  imagePath: 'assets/images/recom1.png',
                                   title: 'White Fashion Hoodie',
                                   price: 29.00,
                                 ),
@@ -191,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   width: 20,
                                 ),
                                 RecommendedItem(
-                                  imagePath: 'assets/images/recommended2.png',
+                                  imagePath: 'assets/images/recom2.png',
                                   title: 'Cotton T-shirt',
                                   price: 30.00,
                                 ),

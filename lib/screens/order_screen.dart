@@ -47,14 +47,15 @@ class _OrderScreenState extends State<OrderScreen>
                 const MainAppBar(
                   title: 'My Orders',
                   fontWeight: FontWeight.w500,
-                  fontSize: 25,
+                  fontSize: 21,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.fromLTRB(12, 30, 12, 30),
                   child: TabBar(
                     controller: _tabController,
                     indicatorColor: AppConstants.transparentColor,
                     dividerColor: AppConstants.transparentColor,
+                    labelPadding: const EdgeInsets.symmetric(horizontal: 8),
                     tabs: [
                       Tab(
                         child: Container(
@@ -83,7 +84,6 @@ class _OrderScreenState extends State<OrderScreen>
                       ),
                       Tab(
                         child: Container(
-                          width: 90,
                           height: 28,
                           decoration: BoxDecoration(
                             color: currentIndex == 1

@@ -20,8 +20,7 @@ class OrderDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void onBackTap() {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const MainScreen()));
+     Navigator.pop(context);
     }
 
     return SafeArea(
@@ -38,7 +37,7 @@ class OrderDetailScreen extends StatelessWidget {
                 centerTitle: true,
               ),
               const SizedBox(
-                height: 25,
+                height: 45,
               ),
               Container(
                 padding: const EdgeInsets.all(

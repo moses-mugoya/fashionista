@@ -11,7 +11,12 @@ class BannerTwo extends StatelessWidget {
 
     return Container(
       height: 141,
-      decoration: BoxDecoration(color: AppConstants.bannerBackgroundColor),
+      decoration: BoxDecoration(
+        color: AppConstants.bannerBackgroundColor,
+        borderRadius: BorderRadius.circular(
+          12,
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

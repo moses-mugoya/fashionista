@@ -20,13 +20,14 @@ class ChildAppBar extends StatelessWidget {
         GestureDetector(
           onTap: onTapped,
           child: Material(
-            elevation: 3, // Set the elevation value as needed
-            borderRadius: BorderRadius.circular(18),
+            color: AppConstants.whiteColor,
+            elevation: 2, // Set the elevation value as needed
+            borderRadius: BorderRadius.circular(17),
             child: Container(
-              height: 36,
-              width: 36,
+              height: 34,
+              width: 34,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),
+                borderRadius: BorderRadius.circular(17),
               ),
               child: const Center(
                 // Center the icon horizontally and vertically
