@@ -1,4 +1,4 @@
-# fashionista
+# Fashionista
 
 An E-Commerce Flutter UI.
 
